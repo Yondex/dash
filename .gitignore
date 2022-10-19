@@ -1,0 +1,5 @@
+/venv
+!config.py
+/tmp
+/__pycache__
+!.gitignore
