@@ -1,0 +1,107 @@
+      table.itserv
+        {text-decoration: none;border-collapse:collapse;width:100%;text-align:left;}
+        table.itserv
+        th{font-weight:normal;font-size:16px; color:#ffffff;background-color:#348f00;}
+        table.itserv
+        td{font-size:14px;color:#000000;}
+        table.itserv
+        td,table.itserv th{white-space:pre-wrap;padding:12px 15px;line-height:14px;vertical-align: middle;border: 1px solid #348f00;}
+        table.itserv
+        tr:hover{background-color:#f9fafb}
+        table.itserv
+        tr:hover td{color:#354251;cursor:default;}
+
+
+       table.iksweb
+        {text-decoration: none; table-layout: fixed; border-collapse:collapse;width:100%;text-align:left;}
+        table.iksweb
+        th{font-weight:normal;font-size:16px; color:#ffffff;background-color:#348f00;}
+        table.iksweb
+        td{font-size:14px;color:#000000;}
+        table.iksweb
+        td,table.iksweb th{white-space:pre-wrap;padding:12px 20px;line-height:14px;vertical-align: middle;border: 1px solid #348f00;}
+        table.iksweb
+        tr:hover{background-color:#f9fafb}
+        table.iksweb
+        tr:hover td{color:#354251;cursor:default;}
+
+
+a {
+  background-color: red;
+  color: white;
+  padding: 0.25em 0.25em;
+  text-decoration: none;
+
+}
+
+a:hover {
+  background-color: #555;
+}
+
+a:active {
+  background-color: write;
+}
+
+a:visited {
+  background-color: #348f00 ;
+}
+
+
+.btn {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 16px;
+	margin: 0 15px 15px 0;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12.5px;
+	font-weight: normal;
+	text-decoration: none;
+	vertical-align: top;
+	color: #55677d;
+	background-color: #dfe6ed;
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+	overflow: hidden;
+}
+.btn:focus-visible {
+	box-shadow: 0 0 0 3px lightskyblue;
+}
+.btn:hover {
+	opacity: 0.88;
+}
+.btn:active {
+	line-height: 32px;
+}
+.btn:disabled {
+	pointer-events: none;
+	opacity: 0.65;
+}
+
+
+
+a.glo{
+ color:#00c6ff;
+ padding: 15px 20px;
+ text-transform: uppercase;
+ width:220px;
+ text-decoration:none;
+ text-align:center;
+ margin:30px 0;
+ display: block;
+ background-image: linear-gradient(to left,transparent,transparent 50%,#00c6ff 50%,#00c6ff);
+ background-position: 100% 0;
+ background-size: 100% 100%;
+ transition: all .25s ease-in;
+ font: 400 12px tahoma;
+ border: 1px solid #00C6FF;
+}
+a.glo:hover {
+background-position: 0 0;
+color:#fff;
+}

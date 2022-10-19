@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <p><a href="index.html"> </a><img src="{{url_for('static', filename = 'img/log.jpeg')}}"
+    width="165px"
+    align="left"> </p>
+    <img src="{{url_for('static', filename = 'img/klav.jpeg')}}"
+    width="300px"
+    align="right">
+    <br>
+</header>
+<script src="/static/js/script.js"></script>
+
+
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+<p align="center" style="color:#0099; font-size:30px">
+                                Единная электронная спецификация</p>
+
+    <br>
+    <br>
+    <nav class="cl-effect-11">
+        <a href="index" data-hover="main">Назад</a>
+    </nav>
+<p> 
+    <td>
+<form name="speca" method="post" action="/selected">
+    <div class="right">
+
+        <td>Период</td>
+	
+    <select name="period">
+        <option value={{message[0][1]}}>Выберите значение</option>
+        <option>{{message[0][1]}}</option>
+    </select>
+
+</td>
+</tr>
+
+<tr>
+    <td>Тербанк</td>
+    <td>
+        <select name="tb">
+            <option value="">Выберите значение</option>
+            <option value="all">Все</option>
+            <option value="ДВБ">Дальневосточный</option>
+            <option value="ББ">Байкальский</option>
+            <option value="СИБ">Сибирский</option>
+            <option value="СЗБ">Северо-Западный</option>
+            <option value="ПБ">Повольжский</option>
+            <option value="ВВБ">Волго-Вятский</option>
+            <option value="МБ">Московский</option>
+            <option value="СРБ">Среднерусский</option>
+            <option value="ЦА">Центральный</option>
+
+
+
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Услуга</td>
+    <td>
+        
+            <select name="it_service">
+            <option value="">Выберите значение</option>
+            <option value="all">Все</option>
+            <option value="Приоритетная поддержка off-site">Приоритетная поддержка off-site</option>
+            <option value="Сопровождение оргтехники общего пользования(Стандарт)">Сопровождение оргтехники общего пользования(Стандарт)</option>
+            <option value="Сопровождение интеграционных модулей счетно-сортировочных машин(неуправляемые)">Сопровождение интеграционных модулей счетно-сортировочных машин(неуправляемые)</option>
+            <option value="Замена расходных материалов КСУОП (для однолоточных устройств)">Замена расходных материалов КСУОП (для однолоточных устройств) </option>
+            <option value="Приоритетная поддержка On-site">Приоритетная поддержка On-site</option>
+            <option value="Сопровождение каналов связи до ВСП и кампусов ">Сопровождение каналов связи до ВСП и кампусов </option>
+            <option value="Сопровождение беспроводной сети">Сопровождение беспроводной сети </option>
+            <option value="Сопровождение рабочих мест(ПК)">Сопровождение рабочих мест(ПК) </option>
+            <option value="Споровождение ЛВС">Споровождение ЛВС </option>
+            <option value="Сопровождение телефонии">Сопровождение телефонии </option>
+            <option value="Сопровождение корпоративной телефонной сети (КТС)">Сопровождение корпоративной телефонной сети (КТС) </option>
+            <option value="Сопровождение мероприятий с использованием аудио видео оборудования в переговорных компнатах">Сопровождение мероприятий с использованием аудио видео оборудования в переговорных компнатах </option>
+            <option value="Сопровождение IT Service Point">Сопровождение IT Service Point</option>
+            <option value="Сопровождение оргтехники общего пользования (Ремонт)">Сопровождение оргтехники общего пользования (Ремонт) </option>
+            <option value="Сопровождение ГВС">Сопровождение ГВС </option>
+            <option value="Сопровождение мобильных рабочих мест">Сопровождение мобильных рабочих мест </option>
+            <option value="Техническая поддержка POS-терминалов ВСП">Техническая поддержка POS-терминалов ВСП </option>
+            <option value="Замена расходных материалов КСУОП(многолотковые)">Замена расходных материалов КСУОП(многолотковые) </option>
+            <option value="Сопровождение СКС">Сопровождение СКС </option>
+            <option value="Сопровождение оборудования усиления сигнала сотовой связи(УСС)">Сопровождение оборудования усиления сигнала сотовой связи(УСС) </option>
+            <option value="Сопровождение оргтехники общего пользования (Диагностика)">Сопровождение оргтехники общего пользования (Диагностика)</option>
+            <option value="Сопровождение ВКС" >Сопровождение ВКС</option>
+            <option value="Сопровождение корпоративного Wifi">Сопровождение корпоративного Wifi</option>
+            <option value="Сопровождение интеграционных модулей счетно-сортировочных машин(управляемые)">Сопровождение интеграционных модулей счетно-сортировочных машин(управляемые) </option>
+            <option value="Оснащение и дооснащение ИТ оборудованием рабочих мест">Оснащение и дооснащение ИТ оборудованием рабочих мест</option>
+            <option value="Сопровождение рабочих мест(тонкие клиенты)">Сопровождение рабочих мест(тонкие клиенты)</option>
+            <option value="Выдача SIM-карт">Выдача SIM-карт</option>
+            <option value="Сопровождение оргтехники общего пользования(Ресурсные работы)">Сопровождение оргтехники общего пользования(Ресурсные работы)</option>
+
+        </select>
+
+        <input type="submit" value="Показать">
+</form>
+
+ &nbsp &nbsp &nbsp <input  type = "button" onclick="countRabbits()"  value="Добавить новую запись">
+  </div>
+
+   
+</p>
+        
+
+
+<table class="iksweb">
+                    <thead>
+                        <tr>
+                            <th>Услуга</th>
+                            <th>Период</th>
+                            <th>ТБ</th>
+                            <th>Уровень</th>
+                            <th>Дней поддержки</th>
+                            <th>Срок исполнения</th>
+                            <th>Тариф</th>
+                            <th>Объект</th>
+                            <th>Кол-во объектов</th>
+                            <th>Сумма</th>
+                             <th>Утверждение</th>
+                            <th>Изменение</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for m in message %}
+
+                        <form id ="spec-form" onsubmit="return Checkform(this)" method="post" >
+
+
+
+
+                        <tr>
+
+                            <td> {{m[0]}}</td>
+                            <td> {{m[1]}}</td>
+                            <td> {{m[2]}}</td>
+                            <td> {{m[3]}}</td>
+                            <td> {{m[4]}}</td>
+                            <td> {{m[5]}}</td>
+                            <td> {{m[6]}}</td>
+                            <td> {{m[7]}}</td>
+                            <td><input type="text" size="6" value={{m[8]}}  name = 'count' ></td>
+                            <td><input type="text" size="9" value={{m[9]}}  name = 'summa' ></td>
+                            <td><input type="text" size="1" value={{m[11]}} name = 'status'></td>
+                            <input type="hidden" size="8" value={{m[12]}} name = 'ids'>
+                             <td><p><input type="submit"  value=" Изменить"></p></td>
+
+                          
+                        </tr>
+</form>
+
+                        {% endfor %}
+                    </tbody>
+
+                    </table> 
+            
+           
+
+        
+        
+</html>
