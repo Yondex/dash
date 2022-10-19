@@ -1,0 +1,5 @@
+user="postgres"
+password="7753191"
+host="localhost"
+port="5432"
+database="dbck_nsk"
