@@ -1,7 +1,4 @@
-from enum import unique
-from main import db, app
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from manage import db 
 
 class users (db.Model):
     __tablename__ = "users"

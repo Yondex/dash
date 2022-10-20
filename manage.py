@@ -2,23 +2,34 @@ from multiprocessing import connection
 import os
 import io
 import csv
-from sqlite3 import Cursor
+
 from flask import Flask, redirect, url_for, render_template, request, flash
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import psycopg2
 import pandas as pd
 import numpy as np
-from config import user, password, host, port, database
+from config import user, password, host, port, database, SQLALCHEMY_DATABASE_URI, secret_key
 from openpyxl import load_workbook, Workbook
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
+
+
 
 ALLOWED_EXTENSIONS = {'xlsx'}
 
 
 app = Flask(__name__)
-app.secret_key = 'some_secret'
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
+
+db = SQLAlchemy (app)
+migrate = Migrate(app, db)
 
 arr = []
+
+
 
 
 @app.route('/add')
