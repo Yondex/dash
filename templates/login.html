@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html >
-<head>
-  <meta charset="UTF-8">
-  <title>Nice dark sign in form</title>
-  
-  
-  
-		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style3.css') }}">
+<html lang = "en">
+
+<script	src="{{url_for('static', filename = 'js/script.js')}}"></script>
+<script	src="{{url_for('static', filename = 'js/form.js')}}"></script>
+<link rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename = 'css/style4form.css')}}">
+
+
 
   
-</head>
-
-<body>
-  <h1>Sign In Form</h1>
-<div id="wrapper">
-	<form id="signin" method="POST" action="/login" >
+<div id="login">
+	</h1> Введите почту и пароль.</h1>
+	<form id="signin" method="POST" action="/authorization" >
 		<input type="text"  name="user" placeholder="username" />
 		<input type="password" name="pass" placeholder="password" />
-		<button type="submit">&#xf0da;</button>
+		<button type="submit">Войти</button>
 		
 	</form>
 </div>

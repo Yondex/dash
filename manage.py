@@ -36,6 +36,10 @@ arr = []
 def base():
     return render_template('base.html')
 
+@app.route('/autho')
+def autho():
+    return render_template('login.html')
+
 @app.route('/login',methods = ['POST', 'GET'])
 def login():
     password = 0
@@ -141,40 +145,7 @@ def result():
     #return redirect(url_for('main'))
     return render_template('main.html', message=error)
 
- # Добавления записи в БД
-def db_insert():
-    it_service = "sd"
-    period = "sd"
-    tb = "sd"
-    level = "sd"
-    days = "sd"
-    execution_time = "sd"
-    tarif = "sd"
-    object_names = "sd"
-    obj_count = "sd"
-    summa = "sd"
-    fimishstate = "sd"
-    central_sign = "sd"
-    id = "sd"
-    try:
-        connection = connect()
-        cursor = connection.cursor()
-        sql_update_query = (""" INSERT INTO mobile (it_service, period, tb, level, days, execution_time, tarif, object_names, obj_count, summa, fimishstate, central_sign, id) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s, %s,%s,%s,%s) """)
 
-        cursor.execute(sql_update_query, (it_service, period, tb, level, days, execution_time, tarif, object_names, obj_count, summa, fimishstate, central_sign, id))
-        connection.commit()
-        count = cursor.rowcount
-        print (count, "Запись успешно добавлена в таблицу ")
-    except (Exception, IOError) as error:
-        print("Ошибка при работе с PostgreSQL", error)
-    finally:
-        if connection:
-            cursor.close()
-            connection.close()
-        print("Соединение с PostgreSQL закрыто")
-
-
-    return render_template('main.html')
 
 
 # функция выбора спеки по фильтрам (ТБ, услуга, период)
@@ -236,7 +207,7 @@ def double_conn():
     # Курсор для выполнения операций с базой данных
         cursor = connection.cursor()
     # Выполнение SQL-запроса
-        cursor.execute('CALL speca_arch.dbo.remove_duplication();')
+        cursor.execute('CALL dbck_nsk.dbo.remove_duplication();')
         connection.commit()
     except (Exception, IOError) as error:
         print("Ошибка при работе с PostgreSQL", error)
@@ -408,6 +379,7 @@ def tarif_sbs():
         cursor.execute('Select * from dbo.tarif_sbs;')
         connection.commit()
         record = cursor.fetchall()
+        print(record)
     except (Exception, IOError) as error:
         print("Ошибка при работе с PostgreSQL", error)
     finally:
@@ -437,13 +409,10 @@ def upload():
         return render_template('index.html', error='file extension not supported')
     if file:
         filename = secure_filename(file.filename)
-        filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)) + r'\tmp', filename)
+        filepath = os.path.join(os.path.dirname(os.path.abspath(__file__)) + r'/tmp', filename)
         file.save(filepath)
 
     return filepath
-
-
-
 
 
 
